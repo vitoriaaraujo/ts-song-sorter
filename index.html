@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Lyric Of the Day</title>
+    <link rel="icon" href="https://www.taylorswift.com/files/2022/08/favicon__1_-78x75.png" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <!--ADOBE FONT MIDNIGHTS-->
+    <link rel="stylesheet" href="https://use.typekit.net/dly3bfb.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <h1 class="nav_logo">Taylor Swift Song Of The Day</h1>
+    </nav>
+
+    <div class="main">
+        <img src="tsmtm.webp" style="max-width: 200px">
+        <a class="main_preSave" href="https://presave.umusic.com/taylorswiftmidnights?utm_campaign=M%20Test%20%2801GB39WPRPC9ZZYBP97YNN13ER%29&utm_medium=email&utm_source=Newsletter%20%28US%29&_kx=6KVzfvrHVybXFKLDiIts9B253Gyo7Azyqik5baXPgQk%3D.R4Bhid"><button><span>pre-save</span></button></a>
+        <div class="main_firstHeader">
+            <div class="container">
+                <h1 id="headline"></h1>
+                  <div id="countdown">
+                    <ul>
+                    <li><span id="days"></span>Days</li>
+                      <li><span id="hours"></span>Hours</li>
+                      <li><span id="minutes"></span>Minutes</li>
+                      <li><span id="seconds"></span>Seconds</li>
+                    </ul>
+                  </div>
+                  <div id="content" class="emoji">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+              </div>
+        </div>
+        <div class="main_header">
+            <h3 class="main_header_text">Press the button for a random taylor swift song to claim today:</h3>
+        </div>
+            <h3 id="song_text" style="display: none;">The song to claim today is:  <span id="song"></span></h3>
+        <button onclick="getSong()" class="main_btn">Claim</button>
+    </div>
+
+
+    <script>
+        (function () {
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  //I'm adding this section so I don't have to keep updating this pen every year :-)
+  //remove this if you don't need it
+  let today = new Date(),
+    dd = String(today.getDate()).padStart(2, "0"),
+    mm = String(today.getMonth() + 1).padStart(2, "0"),
+    yyyy = today.getFullYear(),
+    nextYear = yyyy + 1,
+    dayMonth = "10/21/",
+    release = dayMonth + yyyy;
+
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > release) {
+    release = dayMonth + nextYear;
+  }
+  //end
+
+  const countDown = new Date(release).getTime(),
+    x = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDown - now;
+
+      (document.getElementById("days").innerText = Math.floor(distance / day)),
+        (document.getElementById("hours").innerText = Math.floor(
+          (distance % day) / hour
+        )),
+        (document.getElementById("minutes").innerText = Math.floor(
+          (distance % hour) / minute
+        )),
+        (document.getElementById("seconds").innerText = Math.floor(
+          (distance % minute) / second
+        ));
+
+      //do something later when date is reached
+      if (distance < 0) {
+        document.getElementById("headline").innerText = "It's my release!";
+        document.getElementById("countdown").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        clearInterval(x);
+      }
+      //seconds
+    }, 0);
+})();
+
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

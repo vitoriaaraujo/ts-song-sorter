@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    background-image: url("https://cache.umusic.com/_sites/_halo/flnc/akts/sbgk.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main_preSave {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(10, 27, 37);
+    font-weight: 500;
+}
+
+.main_preSave button {
+    padding: 10px 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.main_preSave span {
+    font-family: 'Roboto Serif', serif;
+}
+
+.title {
+    max-width: 250px;
+}
+
+.container {
+    color: #ac9eb8;
+    margin: 0 auto;
+    text-align: center;
+}
+  
+#headline {
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+  
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+li span {
+    display: block;
+    font-size: 4.5rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ac9eb8;
+    height: 10vh;
+}
+
+.nav_logo h1 {
+    font-size: 30px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: calc(100vh - 10vh);
+}
+
+.main_header_text {
+    font-size: 20px;
+    line-height: 1px;
+    color: #FFF;
+    font-family: 'Roboto Serif', serif;
+}
+
+.main_btn {
+    padding: 15px 5px;
+    width: 20%;
+    border: none;
+    border-radius: 8px;
+    color: #ac9eb8;
+}
+
+.main_btn:hover {
+    background-color: black;
+    cursor: pointer;
+    transition: .3s ease-in all;
+}
+
+@media screen and (max-width: 600px){
+    body {
+        background-image: url("sbgmk.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .main_preSave button {
+        padding: 10px 40px;
+    }
+
+    li {
+        font-size: 1em;
+    }
+
+    li span {
+        font-size: 3.5em;
+    }
+
+    .nav_logo h1 {
+        font-size: 20px;
+    }
+
+    .main_header_text {
+        font-size: 15px;
+    }
+
+    .main_btn {
+        width: 40%;
+    }
+
+    #song_text, #song {
+        font-size: 15px;
+    }
+    
+}
